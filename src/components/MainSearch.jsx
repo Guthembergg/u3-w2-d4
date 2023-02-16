@@ -2,11 +2,13 @@ import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HeartFill } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
 import Job from "./Job";
 
 const MainSearch = () => {
   const [query, setQuery] = useState("");
   const [jobs, setJobs] = useState([]);
+  const numberSelect = useSelector((state) => state.favourite.content.length);
 
   const baseEndpoint =
     "https://strive-benchmark.herokuapp.com/api/jobs?search=";
@@ -41,7 +43,7 @@ const MainSearch = () => {
         >
           <h1>Remote Jobs Search</h1>
           <Link to={"/favourites"}>
-            <HeartFill></HeartFill>
+            <HeartFill></HeartFill>- {numberSelect}
           </Link>
         </Col>
         <Col xs={10} className="mx-auto">
