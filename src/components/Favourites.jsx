@@ -36,7 +36,8 @@ const Favourites = () => {
                   <div>
                     <p style={{ fontWeight: "700" }}>{el.title}</p>
                     <p>
-                      {el.company_name} - {el.job_type}
+                      <Link to={`/${el.company_name}`}>{el.company_name}</Link>{" "}
+                      - {el.job_type}
                     </p>
                   </div>
 
