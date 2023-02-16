@@ -22,6 +22,7 @@ const Job = ({ data, i }) => {
         </a>
         {array.includes(data._id) && (
           <HeartFill
+            type="submit"
             onClick={() => {
               dispatch({
                 type: "REMOVE",
