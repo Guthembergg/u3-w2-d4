@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Badge } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HeartFill } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,7 +43,8 @@ const MainSearch = () => {
         >
           <h1>Remote Jobs Search</h1>
           <Link to={"/favourites"}>
-            <HeartFill></HeartFill>- {numberSelect}
+            <HeartFill></HeartFill>{" "}
+            <Badge variant="primary">{numberSelect}</Badge>
           </Link>
         </Col>
         <Col xs={10} className="mx-auto">
